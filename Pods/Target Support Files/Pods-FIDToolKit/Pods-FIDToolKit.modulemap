@@ -1,0 +1,6 @@
+framework module Pods_FIDToolKit {
+  umbrella header "Pods-FIDToolKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

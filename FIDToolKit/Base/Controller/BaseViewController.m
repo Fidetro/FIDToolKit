@@ -158,11 +158,11 @@
 
 - (void)refreshEvent{
     
-    
+
 }
 
 -(void)touchesEnded:(NSSet<UITouch*> *)touches withEvent:(UIEvent*)event{
-    
+  
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];//点击屏幕收起键盘
     
 }

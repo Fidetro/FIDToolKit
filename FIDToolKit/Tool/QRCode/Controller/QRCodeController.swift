@@ -27,7 +27,8 @@ class QRCodeController: BaseViewController,AVCaptureMetadataOutputObjectsDelegat
         switch authorizationStatus {
             
         case .notDetermined:
-            print("访问允许")
+            print("访问不确定")
+
             AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { (granted:Bool) in
                 self.setupCapture();
 
@@ -35,26 +36,30 @@ class QRCodeController: BaseViewController,AVCaptureMetadataOutputObjectsDelegat
             
             
         case .restricted:
-            print("访问拒绝")
+            print("访问限制")
+
+            
         case .denied:
-            print("访问不确定")
+
+            print("访问拒绝")
+
         case .authorized:
+            
             AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { (granted:Bool) in
                 self.setupCapture();
                 
             });
-            print("访问限制")
-       
+            print("访问允许")
+
         }
         
     }
     
-    /// 设置捕获二维码
+    /// 设置开启摄像头
     func setupCapture() {
         
         OperationQueue.main.addOperation {
             
-           let session = AVCaptureSession();
             let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo);
           
         
@@ -64,19 +69,17 @@ class QRCodeController: BaseViewController,AVCaptureMetadataOutputObjectsDelegat
                 
                 if deviceInput as AVCaptureDeviceInput? != nil {
                     
-                    session.addInput(deviceInput);
+                    self.session.addInput(deviceInput);
                     let metadataOutput = AVCaptureMetadataOutput();
                     metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main);
-                    session.addOutput(metadataOutput);
+                    self.session.addOutput(metadataOutput);
                     metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode];
-                    let previewLayer = AVCaptureVideoPreviewLayer.init(sessionWithNoConnection: session);
-                    previewLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill;
-                    previewLayer!.frame = self.view.bounds;
-                    self.view.layer.insertSublayer(previewLayer!, at: 0);
+             
+                    self.view.layer.insertSublayer(self.previewLayer, at: 0);
                     NotificationCenter.default.addObserver(forName: NSNotification.Name.AVCaptureInputPortFormatDescriptionDidChange, object: nil, queue: OperationQueue.current, using: { (notification : Notification) in
-//                        metadataOutput.rectOfInterest = previewLayer!.metadataOutputRectOfInterest(for: self.view.bounds);
+                        
                     });
-                    session.startRunning();
+                    self.session.startRunning();
                     
                 }
                 
@@ -91,23 +94,56 @@ class QRCodeController: BaseViewController,AVCaptureMetadataOutputObjectsDelegat
   
     }
     
+    /// 捕获输出的内容
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         let metadataObject = metadataObjects.first;
         
         if (metadataObject as? AVMetadataMachineReadableCodeObject)?.type == AVMetadataObjectTypeQRCode {
             
+                let msg = (metadataObject as? AVMetadataMachineReadableCodeObject)?.stringValue;
+            
             print("\((metadataObject as? AVMetadataMachineReadableCodeObject)?.stringValue)");
+            
+            let alertVC = UIAlertController.init(title: "", message: msg, preferredStyle: .alert);
+            
+            
+            if (self.QRCodeMsg == nil){
+                print("present");
+                self.QRCodeMsg = msg;
+                self.present(alertVC, animated: true, completion: nil);
+            }
+           DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3), execute: {
+            
+            self.QRCodeMsg = nil;
+            self.dismiss(animated: true, completion: nil);
+         
+
+            
+           });
+            
             
         }
         
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let originalImage = info[UIImagePickerControllerOriginalImage];
-        
-        
-    }
+  
+
+    
+    //会话
+    private lazy var session:AVCaptureSession = {
+        let session = AVCaptureSession()
+        return session
+    }();
+    
+    private lazy var previewLayer: AVCaptureVideoPreviewLayer = {
+        let layer = AVCaptureVideoPreviewLayer(session: self.session)
+        layer?.frame = UIScreen.main.bounds
+        return layer!
+    }();
+    
+    var QRCodeMsg : String!;
+    
     
     
     override func didReceiveMemoryWarning() {

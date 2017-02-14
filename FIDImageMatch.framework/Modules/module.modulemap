@@ -1,0 +1,6 @@
+framework module FIDImageMatch {
+  umbrella header "FIDImageMatch.h"
+
+  export *
+  module * { export * }
+}

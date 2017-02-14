@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C61E94B31E14F299000588C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61E94B21E14F299000588C7 /* AppDelegate.swift */; };
-		C61E94B51E14F299000588C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61E94B41E14F299000588C7 /* ViewController.swift */; };
+		9A37F2751E370DE70073C5B1 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F2741E370DE70073C5B1 /* MatchViewController.swift */; };
+		9A37F2791E370F200073C5B1 /* FIDCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F2781E370F200073C5B1 /* FIDCameraHelper.m */; };
+		9A37F27E1E370F4E0073C5B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F27A1E370F4E0073C5B1 /* AppDelegate.swift */; };
+		9A37F27F1E370F4E0073C5B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F27B1E370F4E0073C5B1 /* Assets.xcassets */; };
+		9A37F2801E370F4E0073C5B1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F27C1E370F4E0073C5B1 /* Info.plist */; };
+		9A37F2811E370F4E0073C5B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F27D1E370F4E0073C5B1 /* ViewController.swift */; };
+		9A37F2841E370F6E0073C5B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F2821E370F6E0073C5B1 /* LaunchScreen.storyboard */; };
+		9AA36C4B1E5338BF00DFE707 /* BaseViewController+Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA36C4A1E5338BF00DFE707 /* BaseViewController+Camera.m */; };
+		9AA36CEA1E53585F00DFE707 /* FIDImageMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA36CE91E53585F00DFE707 /* FIDImageMatch.framework */; };
+		9AC06C201E5359C0000AEBFB /* FIDImageMatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA36CE91E53585F00DFE707 /* FIDImageMatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C61E94B81E14F299000588C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61E94B61E14F299000588C7 /* Main.storyboard */; };
-		C61E94BA1E14F299000588C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C61E94B91E14F299000588C7 /* Assets.xcassets */; };
-		C61E94BD1E14F299000588C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61E94BB1E14F299000588C7 /* LaunchScreen.storyboard */; };
 		C61E94C81E14F299000588C7 /* FIDToolKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61E94C71E14F299000588C7 /* FIDToolKitTests.swift */; };
 		C61E94D31E14F299000588C7 /* FIDToolKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61E94D21E14F299000588C7 /* FIDToolKitUITests.swift */; };
 		C61E94ED1E14F439000588C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61E94EC1E14F439000588C7 /* BaseViewController.m */; };
@@ -42,23 +48,43 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9AA36CE81E53579000DFE707 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9AC06C201E5359C0000AEBFB /* FIDImageMatch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1B17B5A36CEDAE928144ECBC /* Pods_FIDToolKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FIDToolKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A37F2741E370DE70073C5B1 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		9A37F2771E370F200073C5B1 /* FIDCameraHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIDCameraHelper.h; sourceTree = "<group>"; };
+		9A37F2781E370F200073C5B1 /* FIDCameraHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIDCameraHelper.m; sourceTree = "<group>"; };
+		9A37F27A1E370F4E0073C5B1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FIDToolKit/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		9A37F27B1E370F4E0073C5B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FIDToolKit/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		9A37F27C1E370F4E0073C5B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FIDToolKit/Info.plist; sourceTree = SOURCE_ROOT; };
+		9A37F27D1E370F4E0073C5B1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = FIDToolKit/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		9A37F2831E370F6E0073C5B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FIDToolKit/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		9A37F2851E370F7F0073C5B1 /* FIDToolKit-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FIDToolKit-Bridging-Header.h"; path = "FIDToolKit/Base/Controller/FIDToolKit-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		9AA36C491E5338BF00DFE707 /* BaseViewController+Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseViewController+Camera.h"; sourceTree = "<group>"; };
+		9AA36C4A1E5338BF00DFE707 /* BaseViewController+Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseViewController+Camera.m"; sourceTree = "<group>"; };
+		9AA36CE91E53585F00DFE707 /* FIDImageMatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIDImageMatch.framework; sourceTree = "<group>"; };
 		C08322B014CD947A5E3EE82E /* Pods-FIDToolKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIDToolKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-FIDToolKit/Pods-FIDToolKit.release.xcconfig"; sourceTree = "<group>"; };
 		C61E94AF1E14F299000588C7 /* FIDToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIDToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C61E94B21E14F299000588C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		C61E94B41E14F299000588C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		C61E94B71E14F299000588C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C61E94B91E14F299000588C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		C61E94BC1E14F299000588C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C61E94BE1E14F299000588C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		C61E94C31E14F299000588C7 /* FIDToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FIDToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61E94C71E14F299000588C7 /* FIDToolKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIDToolKitTests.swift; sourceTree = "<group>"; };
 		C61E94C91E14F299000588C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C61E94CE1E14F299000588C7 /* FIDToolKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FIDToolKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61E94D21E14F299000588C7 /* FIDToolKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIDToolKitUITests.swift; sourceTree = "<group>"; };
 		C61E94D41E14F299000588C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C61E94EA1E14F438000588C7 /* FIDToolKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FIDToolKit-Bridging-Header.h"; path = "../Base/Controller/FIDToolKit-Bridging-Header.h"; sourceTree = "<group>"; };
 		C61E94EB1E14F439000588C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		C61E94EC1E14F439000588C7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		C61E94F41E14F4DB000588C7 /* HomeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListController.swift; sourceTree = "<group>"; };
@@ -78,6 +104,7 @@
 			files = (
 				C6823E681E2CB00A00697E19 /* AVFoundation.framework in Frameworks */,
 				CFE6EEA61911D4E83DE7FDF5 /* Pods_FIDToolKit.framework in Frameworks */,
+				9AA36CEA1E53585F00DFE707 /* FIDImageMatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,10 +128,53 @@
 		4FA57B6FC2741CD0130E7EA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AA36CE91E53585F00DFE707 /* FIDImageMatch.framework */,
 				C6823E671E2CB00A00697E19 /* AVFoundation.framework */,
 				1B17B5A36CEDAE928144ECBC /* Pods_FIDToolKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A37F2701E370DCA0073C5B1 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				9A37F2711E370DCA0073C5B1 /* Controller */,
+				9A37F2721E370DCA0073C5B1 /* Model */,
+				9A37F2731E370DCA0073C5B1 /* View */,
+				9A37F2761E370F170073C5B1 /* Store */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
+		9A37F2711E370DCA0073C5B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A37F2741E370DE70073C5B1 /* MatchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A37F2721E370DCA0073C5B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A37F2731E370DCA0073C5B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A37F2761E370F170073C5B1 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				9A37F2771E370F200073C5B1 /* FIDCameraHelper.h */,
+				9A37F2781E370F200073C5B1 /* FIDCameraHelper.m */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		C61E94A61E14F299000588C7 = {
@@ -173,6 +243,8 @@
 			children = (
 				C61E94EB1E14F439000588C7 /* BaseViewController.h */,
 				C61E94EC1E14F439000588C7 /* BaseViewController.m */,
+				9AA36C491E5338BF00DFE707 /* BaseViewController+Camera.h */,
+				9AA36C4A1E5338BF00DFE707 /* BaseViewController+Camera.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,6 +275,7 @@
 			children = (
 				C61E94EF1E14F4CE000588C7 /* HomeList */,
 				C6823E601E2CA3F800697E19 /* QRCode */,
+				9A37F2701E370DCA0073C5B1 /* Match */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -210,13 +283,13 @@
 		C61E94EE1E14F45A000588C7 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				C61E94B21E14F299000588C7 /* AppDelegate.swift */,
-				C61E94B41E14F299000588C7 /* ViewController.swift */,
+				9A37F27A1E370F4E0073C5B1 /* AppDelegate.swift */,
+				9A37F27B1E370F4E0073C5B1 /* Assets.xcassets */,
+				9A37F27C1E370F4E0073C5B1 /* Info.plist */,
+				9A37F27D1E370F4E0073C5B1 /* ViewController.swift */,
+				9A37F2851E370F7F0073C5B1 /* FIDToolKit-Bridging-Header.h */,
+				9A37F2821E370F6E0073C5B1 /* LaunchScreen.storyboard */,
 				C61E94B61E14F299000588C7 /* Main.storyboard */,
-				C61E94EA1E14F438000588C7 /* FIDToolKit-Bridging-Header.h */,
-				C61E94B91E14F299000588C7 /* Assets.xcassets */,
-				C61E94BB1E14F299000588C7 /* LaunchScreen.storyboard */,
-				C61E94BE1E14F299000588C7 /* Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -327,6 +400,7 @@
 				C61E94AD1E14F299000588C7 /* Resources */,
 				B14353CC5F35FBE4FDF50CD7 /* [CP] Embed Pods Frameworks */,
 				FF87D1E74B5A78C1C161D46D /* [CP] Copy Pods Resources */,
+				9AA36CE81E53579000DFE707 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -428,10 +502,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C61E94BD1E14F299000588C7 /* LaunchScreen.storyboard in Resources */,
 				C68041DC1E15FAC50074C757 /* HomeList.plist in Resources */,
-				C61E94BA1E14F299000588C7 /* Assets.xcassets in Resources */,
+				9A37F2801E370F4E0073C5B1 /* Info.plist in Resources */,
 				C61E94B81E14F299000588C7 /* Main.storyboard in Resources */,
+				9A37F2841E370F6E0073C5B1 /* LaunchScreen.storyboard in Resources */,
+				9A37F27F1E370F4E0073C5B1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,13 +579,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A37F27E1E370F4E0073C5B1 /* AppDelegate.swift in Sources */,
 				C6823E5F1E2C639C00697E19 /* HomeListTableViewCell.swift in Sources */,
+				9AA36C4B1E5338BF00DFE707 /* BaseViewController+Camera.m in Sources */,
 				C61E94F51E14F4DB000588C7 /* HomeListController.swift in Sources */,
-				C61E94B51E14F299000588C7 /* ViewController.swift in Sources */,
+				9A37F2791E370F200073C5B1 /* FIDCameraHelper.m in Sources */,
 				C6823E661E2CA45700697E19 /* QRCodeController.swift in Sources */,
+				9A37F2811E370F4E0073C5B1 /* ViewController.swift in Sources */,
 				C61E94ED1E14F439000588C7 /* BaseViewController.m in Sources */,
 				C61E950C1E150F96000588C7 /* TableViewController.swift in Sources */,
-				C61E94B31E14F299000588C7 /* AppDelegate.swift in Sources */,
+				9A37F2751E370DE70073C5B1 /* MatchViewController.swift in Sources */,
 				C68041DA1E15FA950074C757 /* BlockCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,21 +625,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9A37F2821E370F6E0073C5B1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A37F2831E370F6E0073C5B1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		C61E94B61E14F299000588C7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C61E94B71E14F299000588C7 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		C61E94BB1E14F299000588C7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C61E94BC1E14F299000588C7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -666,10 +743,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = J3BJ7G2PUN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FIDToolKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kadima.FIDToolKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kadima.FIDToolKitL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FIDToolKit/Base/Controller/FIDToolKit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -684,10 +765,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = J3BJ7G2PUN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FIDToolKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kadima.FIDToolKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kadima.FIDToolKitL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FIDToolKit/Base/Controller/FIDToolKit-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

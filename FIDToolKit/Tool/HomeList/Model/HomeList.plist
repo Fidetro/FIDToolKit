@@ -7,6 +7,10 @@
 			<key>title</key>
 			<string>二维码工具</string>
 		</dict>
+		<dict>
+			<key>title</key>
+			<string>识别</string>
+		</dict>
 	</array>
 </array>
 </plist>

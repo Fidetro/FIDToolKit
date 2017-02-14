@@ -47,9 +47,22 @@ class HomeListController: BaseViewController,UITableViewDelegate,UITableViewData
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       let QRCodeVC = QRCodeController();
-        tableView.deselectRow(at: indexPath, animated: true);
-        self.navigationController?.pushViewController(QRCodeVC, animated: true);
+    
+        switch indexPath.row {
+        case 0:
+            let QRCodeVC = QRCodeController();
+            tableView.deselectRow(at: indexPath, animated: true);
+            self.navigationController?.pushViewController(QRCodeVC, animated: true);
+            break;
+        case 1:
+            let matchVC = MatchViewController();
+            self.navigationController?.pushViewController(matchVC, animated: true);
+            break;
+        default:
+            break;
+        }
+        
+        
         
         
     }

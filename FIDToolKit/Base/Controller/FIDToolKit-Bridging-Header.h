@@ -3,3 +3,5 @@
 //
 
 #import "BaseViewController.h"
+#import "FIDCameraHelper.h"
+#import <FIDImageMatch/FIDImageMatch.h>
